@@ -1,7 +1,7 @@
 import requests
 
 base_url = "https://yougile.com/api-v2"
-token = 'OhqzNHFZvL3DnKlUQAGiXHHNdvQYLB9iMKN9JJTVtFeCX8gZI6txIJB-jwMeVBbO'
+token = ''
 
 
 def create_projects(title):
