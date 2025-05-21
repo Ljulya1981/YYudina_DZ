@@ -18,8 +18,8 @@ def driver():
     driver = webdriver.Firefox(
         service=FirefoxService(
             GeckoDriverManager().install()))
-    yield driver
     driver.implicitly_wait(10)
+    yield driver
     driver.quit()
 
 
@@ -43,13 +43,13 @@ def test_full_purchase_flow(driver):
         auth.get_shop()
 
     with allure.step("Введение имени пользователя на странице авторизации"):
-        auth.user_name(driver)
+        auth.user_name()
 
     with allure.step("Введение пароля на странице авторизации"):
-        auth.password(driver)
+        auth.password()
 
     with allure.step("Нажатие кнопки 'Login'"):
-        auth.click(driver)
+        auth.click()
 
     main_page = MainPage(driver)
 
@@ -64,7 +64,7 @@ def test_full_purchase_flow(driver):
     with allure.step(
             "Подсчет количества товаров в корзине + проверка на соответствие"
     ):
-        counter = cart_page.check(driver)
+        counter = cart_page.check()
         assert counter == 3
 
     with allure.step("Нажатие на кнопку 'Checkout'"):
@@ -75,7 +75,7 @@ def test_full_purchase_flow(driver):
     with allure.step(
             "Введение имени, фамилии покупателя и его почтового индекса"
     ):
-        order_page.send(driver)
+        order_page.send()
 
     with allure.step("Нажатие на кнопку 'Continue'"):
         order_page.cont()
