@@ -31,7 +31,6 @@ class MainPage:
     def cart_link(self):
         """
         Нажимаем на значок корзины и переходим в нее
-        :return:
         """
         self.driver.find_element(
             By.CSS_SELECTOR, ".shopping_cart_link"
