@@ -12,10 +12,9 @@ class OrderPage:
         self.driver = driver
 
     @allure.step("Введение имени, фамилии покупателя и его почтового индекса")
-    def send(self, driver):
+    def send(self):
         """
         Вводим данные покупателя "First Name", "Last Name", "Postal Code"
-        :param driver: WebDriver — объект драйвера Selenium
         """
         first_name = self.driver.find_element(By.CSS_SELECTOR, "#first-name")
         first_name.send_keys("Юлия")
