@@ -12,10 +12,9 @@ class CartPage:
         self.driver = driver
 
     @allure.step("Подсчет количества товаров в корзине")
-    def check(self, driver):
+    def check(self):
         """
         Подсчитываем количество товаров в корзине
-        :param driver: WebDriver — объект драйвера Selenium
         :return: int
         """
         products = self.driver.find_elements(
