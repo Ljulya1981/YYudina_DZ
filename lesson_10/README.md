@@ -21,6 +21,8 @@
 
 1. Установите необходимые зависимости:
    ```bash
+   pip install selenium
+   pip install pytest
    pip install allure-pytest
    ```
 
